@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'amazon-lagos-frontend';
+  title = 'amazon-lagos-prototype-frontend';
 }

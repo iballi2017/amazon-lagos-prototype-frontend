@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "amazon-lagos-frontend": {
+    "amazon-lagos-prototype-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/amazon-lagos-frontend",
+            "outputPath": "dist/amazon-lagos-prototype-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "amazon-lagos-frontend:build:production"
+              "buildTarget": "amazon-lagos-prototype-frontend:build:production"
             },
             "development": {
-              "buildTarget": "amazon-lagos-frontend:build:development"
+              "buildTarget": "amazon-lagos-prototype-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
