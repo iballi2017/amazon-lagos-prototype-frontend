@@ -1,0 +1,89 @@
+<!-- <p>main-toolbar works!</p> -->
+<nav class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="text-3xl font-bold">
+                    <!-- <img src="logo.png" alt="Brand Logo" class="h-8 w-auto"> -->
+                    <span class="text-red-600">Amazon</span>Lagos
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2">Home</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2">About</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2">Services</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2">Contact</a>
+
+                <div class="relative">
+                    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-1 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                        [appBtnDropContent]="isOpenBtnDropdown" type="button">Dropdown hover <svg
+                            class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdownHover"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active"
+                    class="text-gray-700 hover:text-gray-900 px-3 py-2">Login</a>
+                <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active"
+                    class="text-gray-700 hover:text-gray-900 px-3 py-2">Register</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center" (click)="isNavOpen = !isNavOpen">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden" [ngClass]="{'hidden': !isNavOpen}">
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Login</a>
+        <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Register</a>
+    </div>
+</nav>
+
+
+<h1 *ngIf="isOpenBtnDropdown">Hello World!</h1>
